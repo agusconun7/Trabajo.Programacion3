@@ -324,3 +324,49 @@ nav a:hover{
 .paginacion a:hover{
     background:#1d4ed8;
 }
+
+#btnTema{
+    background:#f59e0b;
+    color:white;
+    border:none;
+    border-radius:5px;
+    padding:10px 15px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+#btnTema:hover{
+    background:#d97706;
+}
+
+/* ---------- MODO OSCURO ---------- */
+
+body.dark{
+    background:#121212;
+    color:white;
+}
+
+body.dark .card,
+body.dark .bienvenida,
+body.dark .item-carrito,
+body.dark #ticket{
+    background:#1f2937;
+    color:white;
+}
+
+body.dark .card p,
+body.dark .bienvenida p,
+body.dark #ticket p{
+    color:white;
+}
+
+body.dark input{
+    background:#374151;
+    color:white;
+    border:1px solid #6b7280;
+}
+
+body.dark a{
+    color:white;
+}
+

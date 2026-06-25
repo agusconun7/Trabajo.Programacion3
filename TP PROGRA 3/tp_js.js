@@ -344,3 +344,48 @@ function restarCantidad(id){
 }
 
 
+
+cargarTema();
+
+function cambiarTema(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+
+        localStorage.setItem("tema","dark");
+
+        const boton = document.getElementById("btnTema");
+
+        if(boton){
+            boton.innerHTML = "☀️ Modo Claro";
+        }
+
+    }else{
+
+        localStorage.setItem("tema","light");
+
+        const boton = document.getElementById("btnTema");
+
+        if(boton){
+            boton.innerHTML = "🌙 Modo Oscuro";
+        }
+    }
+}
+
+function cargarTema(){
+
+    const tema = localStorage.getItem("tema");
+
+    if(tema === "dark"){
+
+        document.body.classList.add("dark");
+
+        const boton = document.getElementById("btnTema");
+
+        if(boton){
+            boton.innerHTML = "☀️ Modo Claro";
+        }
+    }
+}
+
