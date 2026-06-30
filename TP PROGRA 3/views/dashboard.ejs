@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Panel Administrador</title>
+
+    <link rel="stylesheet" href="/css/admin.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>PeriTech Store - Panel Administrador</h1>
+
+    <div>
+
+        <a
+            href="http://127.0.0.1:5500/frontend/index.html"
+            class="btn">
+
+            🏠 Volver a la Tienda
+
+        </a>
+
+        <a
+            href="/admin/nuevo"
+            class="btn">
+
+            ➕ Nuevo Producto
+
+        </a>
+
+        <a
+            href="/excel"
+            class="btn">
+
+            📊 Exportar Ventas
+
+        </a>
+
+        <a
+            href="/login/logout"
+            class="btn">
+
+            🚪 Cerrar sesión
+
+        </a>
+
+    </div>
+
+</header>
+</header>
+
+<% if(mensaje){ %>
+
+<div class="mensaje-exito">
+
+    <% if(mensaje === "creado"){ %>
+
+        ✅ Producto creado correctamente.
+
+    <% } %>
+
+    <% if(mensaje === "editado"){ %>
+
+        ✏️ Producto actualizado correctamente.
+
+    <% } %>
+
+    <% if(mensaje === "activado"){ %>
+
+        ✅ Producto activado correctamente.
+
+    <% } %>
+
+    <% if(mensaje === "desactivado"){ %>
+
+        🚫 Producto desactivado correctamente.
+
+    <% } %>
+
+</div>
+
+<% } %>
+
+<section class="panel-info">
+
+    <h2>Bienvenido al Panel de Administración</h2>
+
+    <p>
+
+        Desde este panel podrá administrar el catálogo de productos,
+        agregar nuevos artículos, editar su información, activar o
+        desactivar productos y exportar el historial de ventas.
+
+    </p>
+
+</section>
+
+<main>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Imagen</th>
+
+<th>Producto</th>
+
+<th>Categoría</th>
+
+<th>Precio</th>
+
+<th>Estado</th>
+
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<% productos.forEach(producto=>{ %>
+
+<tr>
+
+<td><%= producto.id %></td>
+
+<td>
+
+<img
+    src="/assets/<%= producto.categoria.toLowerCase() %>/<%= producto.imagen %>"
+    alt="<%= producto.nombre %>"
+    width="80">
+
+</td>
+
+<td>
+
+<%= producto.nombre %>
+
+</td>
+
+<td>
+
+<%= producto.categoria %>
+
+</td>
+
+<td>
+
+$ <%= Number(producto.precio).toLocaleString("es-AR") %>
+
+</td>
+
+<td>
+
+<% if(producto.activo){ %>
+
+<span class="activo">
+
+🟢 Activo
+
+</span>
+
+<% }else{ %>
+
+<span class="inactivo">
+
+🔴 Inactivo
+
+</span>
+
+<% } %>
+
+</td>
+
+<td>
+
+<a
+    href="/admin/editar/<%= producto.id %>"
+    class="btn-editar">
+
+    ✏️ Editar
+
+</a>
+
+<% if(producto.activo){ %>
+
+<form
+    action="/admin/desactivar/<%= producto.id %>"
+    method="POST"
+    style="display:inline;">
+
+    <button class="btn-desactivar">
+
+        🚫 Desactivar
+
+    </button>
+
+</form>
+
+<% }else{ %>
+
+<form
+    action="/admin/activar/<%= producto.id %>"
+    method="POST"
+    style="display:inline;">
+
+    <button class="btn-activar">
+
+        ✅ Activar
+
+    </button>
+
+</form>
+
+<% } %>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+</main>
+<footer>
+
+    <p>
+
+        PeriTech Store © 2026
+
+    </p>
+
+    <p>
+
+        Trabajo Práctico - Programación III
+
+    </p>
+
+    <p>
+
+        Agustin Blanco - Jesús Fernández
+
+    </p>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Editar Producto</title>
+
+    <link rel="stylesheet" href="/css/admin.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Editar Producto</h1>
+
+</header>
+
+<main>
+
+<% if (typeof error !== "undefined") { %>
+
+<div class="mensaje-error">
+
+    <%= error %>
+
+</div>
+
+<% } %>
+
+<form
+action="/admin/editar/<%= producto.id %>"
+method="POST"
+enctype="multipart/form-data">
+
+<p>Nombre</p>
+
+<input
+type="text"
+name="nombre"
+value="<%= producto.nombre %>"
+required>
+
+<p>Precio</p>
+
+<input
+type="number"
+name="precio"
+value="<%= producto.precio %>"
+required>
+
+<p>Descripción</p>
+
+<input
+type="text"
+name="descripcion"
+value="<%= producto.descripcion %>"
+required>
+
+<p>Categoría</p>
+
+<select name="categoria">
+
+<option
+value="Teclados"
+<%= producto.categoria==="Teclados" ? "selected" : "" %>>
+
+Teclados
+
+</option>
+
+<option
+value="Mouses"
+<%= producto.categoria==="Mouses" ? "selected" : "" %>>
+
+Mouses
+
+</option>
+
+<option
+value="Monitores"
+<%= producto.categoria==="Monitores" ? "selected" : "" %>>
+
+Monitores
+
+</option>
+
+<option
+value="Auriculares"
+<%= producto.categoria==="Auriculares" ? "selected" : "" %>>
+
+Auriculares
+
+</option>
+
+</select>
+
+<p>Imagen</p>
+
+<p>Imagen actual</p>
+
+<img
+src="/assets/<%= producto.imagen %>"
+width="120">
+
+<p>Nueva imagen (opcional)</p>
+
+<input
+type="file"
+name="imagen"
+accept="image/*">
+
+<br><br>
+
+<button class="btn">
+
+Guardar Cambios
+
+</button>
+
+</form>
+
+</main>
+
+</body>
+
+</html>
