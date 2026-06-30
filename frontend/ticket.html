@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeriTech Store - Ticket</title>
+
+    <link rel="stylesheet" href="tp_css.css">
+</head>
+
+<body>
+
+    <header>
+
+        <img src="assets/logo_tp.png" alt="Logo" class="logo">
+        <div>
+            <h1>PeriTech Store</h1>
+            <p>Ticket de compra</p>
+            <p class="alumnos">
+                Alumnos: Agustin Blanco y Jesus Fernandez
+            </p>
+           
+            <nav>
+                <a href="index.html"> Inicio</a>
+                <a href="teclados.html"> Teclados</a>
+                <a href="mouses.html"> Mouses</a>
+                <a href="monitores.html"> Monitores</a>
+                <a href="auriculares.html"> Auriculares</a>
+                <a href="carrito.html"> Carrito</a>
+                <button id="btnTema" onclick="cambiarTema()">
+                🌙 Modo Oscuro
+            </button>
+
+            </nav>
+       
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <div id="ticket">
+
+            <h2>Comprobante de Compra</h2>
+
+            <p id="cliente-ticket"></p>
+
+            <p id="fecha-ticket"></p>
+
+            <hr>
+
+            <div id="productos-ticket"></div>
+
+            <hr>
+
+            <h2 id="total-ticket"></h2>
+
+        </div>
+
+        <div class="acciones-ticket">
+
+            <button onclick="nuevaCompra()">
+                Nueva Compra
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="tp_js.js"></script>
+
+</body>
+
+</html>

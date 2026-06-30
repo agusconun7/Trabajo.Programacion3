@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeriTech Store - Carrito</title>
+
+    <link rel="stylesheet" href="tp_css.css">
+</head>
+
+<body>
+
+    <header>
+
+        <img src="assets/logo_tp.png" alt="Logo" class="logo">
+
+        <div>
+            <h1>PeriTech Store</h1>
+            <p>Carrito de Compras</p>
+
+            <p class="alumnos">
+                Alumnos: Agustin Blanco y Jesus Fernandez
+            </p>
+        </div>
+
+       
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="teclados.html"> Teclados</a>
+            <a href="mouses.html"> Mouses</a>
+            <a href="monitores.html"> Monitores</a>
+            <a href="auriculares.html"> Auriculares</a>
+            <a href="carrito.html"> Carrito</a>
+            <button id="btnTema" onclick="cambiarTema()">
+                🌙 Modo Oscuro
+            </button>
+
+        </nav>
+        
+
+    </header>
+
+    <main>
+
+        <h2 class="titulo-seccion">Mi Carrito</h2>
+
+        <div id="contenedor-carrito"></div>
+
+        <div id="total-carrito"></div>
+
+        <div class="acciones-carrito">
+            <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+
+            <button onclick="finalizarCompra()">
+                Finalizar Compra
+            </button>
+        </div>
+
+    </main>
+
+    <script src="tp_js.js"></script>
+
+</body>
+
+</html>
